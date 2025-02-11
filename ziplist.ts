@@ -1,20 +1,18 @@
-function ziplist(numArr1: (string | number)[], numArr2: (string | number)[]): (string | number)[] {
-  const finalArr: (string | number) [] = [];
-  for (let i = 0; i < numArr1.length; i++) {
-    finalArr.push(numArr1[i]);
-    finalArr.push(numArr2[i]);
+function zipList(list: unknown[], list2: unknown[]): unknown[] {
+  const result: unknown[] = [];
+  for (let i = 0; i < list.length; i++) {
+    result.push(list[i], list2[i]);
   }
-  return finalArr;
+  return result;
 }
 
-function zipListTheFunctionalWay(numArr1: (string | number)[], numArr2: (string | number)[]): (string | number)[] {
-  const finalArr: (string | number) [] = [];
-  numArr1.forEach((element, index) => {
-    finalArr.push(element);
-    finalArr.push(numArr2[index]);
+function zipListTheFunctionalWay(list: unknown[], list2: unknown[]): unknown[] {
+  const result: unknown[] = [];
+  list.forEach((element, index) => {
+    result.push(element, list2[index]);
   });
-  return finalArr;
+  return result;
 }
 
-console.log(ziplist(['a', 'b', 'c'], [1, 2, 3]));
-console.log(zipListTheFunctionalWay(['d', 'e', 'f'], [4, 5, 6]));
+console.log(zipList(['a', 'b', 'c'], [1, 2, 3]));
+console.log(zipListTheFunctionalWay(['a', 'b', 'c'], [1, 2, 3]));
